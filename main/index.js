@@ -5,6 +5,10 @@ const quotes = [
     { person: 'Andrew Hendrixson', quote: "Anyone who has ever made anything of importance was disciplined." }
 ];
 
+// Quote of the Day:
+// "Strength and growth come only through continuous effort and struggle."
+// -Napoleon Hill
+
 
 const container = document.getElementById('quotes-container');
 
@@ -24,7 +28,7 @@ function renderQuotes(quoteObj) {
     
     
     let p = document.createElement('p');
-    p.textContent = quoteObj.quote;
+    p.textContent = `Click me and find out what ${quoteObj.person}'s inspirational qoute is`
 
    
     let footer = document.createElement('footer');
@@ -43,6 +47,16 @@ function renderQuotes(quoteObj) {
 
     // Append article to the container
     container.appendChild(article);
+
+
+    //create the addEvent Listener and Click me 
+    p.addEventListener('click', event => {
+        if (event.target.textContent === `Click me and find out what ${quoteObj.person}'s inspirational qoute is`) {
+            event.target.textContent = quoteObj.quote
+        } else { 
+            event.target.textContent = `Click me and find out what ${quoteObj.person}'s inspirational qoute is`
+        }
+    })
 }
 
 
