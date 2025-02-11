@@ -26,7 +26,7 @@ function renderQuotes(quoteObj) {
     let h2 = document.createElement('h2');
     h2.innerHTML = `<span>${quoteObj.person}</span> says:`;
     
-    
+    //Going to change the p.textContent when clicked 
     let p = document.createElement('p');
     p.textContent = `Click me and find out what ${quoteObj.person}'s inspirational qoute is`
 
