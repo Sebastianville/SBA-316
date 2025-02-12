@@ -2,12 +2,9 @@ const quotes = [
     { person: 'Albert Einstein', quote: 'I have no special talents. I am only passionately curious' },
     { person: 'Michael Jordan', quote: "I’ve missed more than 9000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game-winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed." },
     { person: 'Dr. Seuss', quote: "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose. You’re on your own. And you know what you know. And YOU are the one who’ll decide where to go" },
-    { person: 'Andrew Hendrixson', quote: "Anyone who has ever made anything of importance was disciplined." }
+    { person: 'Andrew Hendrixson', quote: "Anyone who has ever made anything of importance was disciplined." },
+    { person: 'Napoleon Hill', quote: 'Strength and growth come only through continuous effort and struggle.' }
 ];
-
-// Quote of the Day:
-// "Strength and growth come only through continuous effort and struggle."
-// -Napoleon Hill
 
 
 const container = document.getElementById('quotes-container');
@@ -57,6 +54,13 @@ function renderQuotes(quoteObj) {
             event.target.textContent = `Click me and find out what ${quoteObj.person}'s inspirational qoute is`
         }
     })
+
+    // Toggle heart color on click
+    let heart = li.querySelector(".like-glyph");
+    heart.addEventListener("click", () => {
+        heart.classList.toggle("activated-heart"); // Toggles red heart
+        heart.innerHTML = heart.classList.contains("activated-heart") ? "❤️" : "♡"; // Switches between full/empty heart
+    });
 }
 
 
