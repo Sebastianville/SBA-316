@@ -17,11 +17,11 @@ function iterateOver() {
 }
 
 function renderQuotes(quoteObj) {
-    
+    //create a new article for each qoute
     let article = document.createElement('article');
     article.classList.add('media-post');
 
-    
+    //create the header
     let header = document.createElement('header');
     let h2 = document.createElement('h2');
     h2.innerHTML = `<span>${quoteObj.person}</span> says:`;
@@ -30,14 +30,14 @@ function renderQuotes(quoteObj) {
     let p = document.createElement('p');
     p.textContent = `Click me and find out what ${quoteObj.person}'s inspirational qoute is`
 
-   
+    // Create footer with like button
     let footer = document.createElement('footer');
     let ul = document.createElement('ul');
     let li = document.createElement('li');
     li.classList.add('like');
     li.innerHTML = `Like! <span class="like-glyph">&#x2661;</span>`;
 
-    
+    // Assemble elements
     ul.appendChild(li);
     footer.appendChild(ul);
     header.appendChild(h2);
